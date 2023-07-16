@@ -1,0 +1,49 @@
+version: 0.2
+
+
+  # build-list:
+  # build-matrix:
+  # build-graph:
+        
+phases:
+  install:
+
+ 
+    runtime-versions:
+      java: corretto8
+     
+    commands:
+      - echo install
+    
+
+    # steps:
+  pre_build:
+    
+ 
+    commands:
+      - echo pre_build
+
+
+    # steps:
+  build:
+
+
+    commands:
+      - mvn package
+      - echo build
+
+    # steps:
+  post_build:
+ 
+   
+    commands:
+      - echo post_build
+    
+
+artifacts:
+  files:
+    - '**/*'
+    - target/spring-boot-todo-rest-api-h2-aws-code-pipeline-0.0.1-SNAPSHOT.jar
+    
+discard-paths: yes
+ 
